@@ -10,7 +10,7 @@ module.exports = {
             success: false,
             message: '注册失败'
         };
-        const { username, email, password } = ctx.request.body;
+        const { username, email, password, head } = ctx.request.body;
 
         if (!username && !password) {
             result.message = '请填写用户名和密码';
@@ -23,6 +23,7 @@ module.exports = {
                     username: username,
                     password: password,
                     email: email,
+                    head_portrait:head
                 });
 
                 const doc = await newUser.save();
@@ -68,6 +69,27 @@ module.exports = {
                 } else {
                     ctx.body = {success: false, message: '密码错误'}
                 }
+            }
+        })
+    },
+
+    async getUser(ctx) {
+        let result = {
+            success: false,
+            password: ''
+        };
+        const { username } = ctx.request.body;
+
+        await  User.findOne({
+            username
+        },(err,user) => {
+            if (err) {
+                throw err;
+            }
+            if (!user) {
+                ctx.body = result;
+            } else {
+                ctx.body = {success: true, password: user.password}
             }
         })
     }

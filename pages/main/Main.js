@@ -3,13 +3,37 @@
  */
 import React from 'react'
 import { Layout, Menu, } from 'antd'
+import 'whatwg-fetch';
+
 const { Header, Content, Footer } = Layout
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {imgUrl:'https://avatars0.githubusercontent.com/u/6292358?v=4'};
+    }
     handleClick = (item) => {
         const path = item.key;
         location.href = path;
     }
+    componentDidMount(){
+        var self =this;
+        fetch('/main/get-user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({username:'caobin'})
+        }).then(res => {
+            res.json().then(res => {
+                console.log(res.password);
+                self.setState({
+                    imgUrl:'https://avatars0.githubusercontent.com/u/6292358?v=4'
+                });
+            })
+        })
+    }
     render() {
+        var imgUrl = this.state.imgUrl;
         return (
             <Layout className="layout">
                 <Header>
@@ -28,7 +52,7 @@ class App extends React.Component {
                 </Header>
                 <Content style={{ padding: '0 50px' }}>
                     <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
-                        <h2>login suceess!</h2>
+                        <img src={ imgUrl }></img>
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>

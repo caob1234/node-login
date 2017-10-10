@@ -47,9 +47,14 @@ const routers = router
                 .then(res => {
                     return res.json();
                 })
-                .then(res => {
+                .then(async res => {
                     console.log(res);
-                    ctx.body = res;
+                    // ctx.body = res;
+                    const title = res.login;
+                    const imgUrl = res.avatar_url;
+                    await ctx.render('main', {
+                        title,imgUrl
+                    })
 
                 })
         })

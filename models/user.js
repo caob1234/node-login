@@ -15,6 +15,9 @@ const UserSchema = new Schema({
     },
     email: {
         type: String,
+    },
+    head_portrait:{
+        type: String
     }
 });
 

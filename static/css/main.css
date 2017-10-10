@@ -1,9 +1,7 @@
-@font-face {
-  font-family: "Helvetica Neue For Number";
-  src: local("Helvetica Neue");
-  unicode-range: U+30-39;
-}
-/*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable declaration-bang-space-before */
+/* stylelint-disable declaration-bang-space-before */
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -21,6 +19,12 @@ html {
 }
 /* Sections
    ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0;
+}
 /**
  * Add the correct display in IE 9-.
  */
@@ -199,14 +203,22 @@ svg:not(:root) {
 /* Forms
    ========================================================================== */
 /**
- * Remove the margin in Firefox and Safari.
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
  */
 button,
 input,
 optgroup,
 select,
 textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
   margin: 0;
+  /* 2 */
 }
 /**
  * Show the overflow in IE.
@@ -256,6 +268,12 @@ button:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
+}
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
 }
 /**
  * 1. Correct the text wrapping in Edge and IE.
@@ -376,6 +394,11 @@ template {
 [hidden] {
   display: none;
 }
+@font-face {
+  font-family: "Helvetica Neue For Number";
+  src: local("Helvetica Neue");
+  unicode-range: U+30-39;
+}
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -462,6 +485,15 @@ input::-ms-reveal {
   background: #108ee9;
   color: #fff;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+}
 a {
   color: #108ee9;
   background: transparent;
@@ -520,9 +552,9 @@ samp {
 }
 @font-face {
   font-family: 'anticon';
-  src: url('https://at.alicdn.com/t/font_0qcp222wvwijm7vi.eot');
+  src: url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.eot');
   /* IE9*/
-  src: url('https://at.alicdn.com/t/font_0qcp222wvwijm7vi.eot?#iefix') format('embedded-opentype'), /* chrome、firefox */ url('https://at.alicdn.com/t/font_0qcp222wvwijm7vi.woff') format('woff'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('https://at.alicdn.com/t/font_0qcp222wvwijm7vi.ttf') format('truetype'), /* iOS 4.1- */ url('https://at.alicdn.com/t/font_0qcp222wvwijm7vi.svg#iconfont') format('svg');
+  src: url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.eot?#iefix') format('embedded-opentype'), /* chrome、firefox */ url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.woff') format('woff'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.ttf') format('truetype'), /* iOS 4.1- */ url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.svg#iconfont') format('svg');
 }
 .anticon {
   display: inline-block;
@@ -1357,6 +1389,9 @@ samp {
 .anticon-shake:before {
   content: "\E94F";
 }
+.anticon-fork:before {
+  content: "\E6F2";
+}
 .anticon-spin:before {
   display: inline-block;
   -webkit-animation: loadingCircle 1s infinite linear;
@@ -1391,6 +1426,7 @@ samp {
           animation-name: antFadeOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .fade-enter,
 .fade-appear {
@@ -1463,6 +1499,7 @@ samp {
           animation-name: antMoveUpOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .move-up-enter,
 .move-up-appear {
@@ -1503,6 +1540,7 @@ samp {
           animation-name: antMoveDownOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .move-down-enter,
 .move-down-appear {
@@ -1543,6 +1581,7 @@ samp {
           animation-name: antMoveLeftOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .move-left-enter,
 .move-left-appear {
@@ -1583,6 +1622,7 @@ samp {
           animation-name: antMoveRightOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .move-right-enter,
 .move-right-appear {
@@ -1907,6 +1947,7 @@ samp {
           animation-name: antSlideUpOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .slide-up-enter,
 .slide-up-appear {
@@ -1947,6 +1988,7 @@ samp {
           animation-name: antSlideDownOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .slide-down-enter,
 .slide-down-appear {
@@ -1987,6 +2029,7 @@ samp {
           animation-name: antSlideLeftOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .slide-left-enter,
 .slide-left-appear {
@@ -2027,6 +2070,7 @@ samp {
           animation-name: antSlideRightOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .slide-right-enter,
 .slide-right-appear {
@@ -2385,6 +2429,7 @@ samp {
           animation-name: antZoomOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .zoom-enter,
 .zoom-appear {
@@ -2427,6 +2472,7 @@ samp {
           animation-name: antZoomBigOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .zoom-big-enter,
 .zoom-big-appear {
@@ -2469,6 +2515,7 @@ samp {
           animation-name: antZoomBigOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .zoom-big-fast-enter,
 .zoom-big-fast-appear {
@@ -2511,6 +2558,7 @@ samp {
           animation-name: antZoomUpOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .zoom-up-enter,
 .zoom-up-appear {
@@ -2553,6 +2601,7 @@ samp {
           animation-name: antZoomDownOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .zoom-down-enter,
 .zoom-down-appear {
@@ -2595,6 +2644,7 @@ samp {
           animation-name: antZoomLeftOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .zoom-left-enter,
 .zoom-left-appear {
@@ -2637,6 +2687,7 @@ samp {
           animation-name: antZoomRightOut;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  pointer-events: none;
 }
 .zoom-right-enter,
 .zoom-right-appear {
@@ -2984,13 +3035,11 @@ samp {
   overflow: hidden;
 }
 .ant-motion-collapse-active {
-  transition: height .12s, opacity .12s;
+  transition: height 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
 }
-@font-face {
-  font-family: "Helvetica Neue For Number";
-  src: local("Helvetica Neue");
-  unicode-range: U+30-39;
-}
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable declaration-bang-space-before */
+/* stylelint-disable declaration-bang-space-before */
 .ant-menu {
   outline: none;
   margin-bottom: 0;
@@ -3001,6 +3050,7 @@ samp {
   color: rgba(0, 0, 0, 0.65);
   background: #fff;
   line-height: 46px;
+  transition: background .3s, width .2s;
 }
 .ant-menu-hidden {
   display: none;
@@ -3014,12 +3064,20 @@ samp {
   font-size: 12px;
   line-height: 1.5;
   padding: 8px 16px;
+  transition: all .3s;
 }
 .ant-menu-item,
 .ant-menu-submenu,
 .ant-menu-submenu-title {
   cursor: pointer;
-  transition: all .3s;
+}
+.ant-menu-submenu,
+.ant-menu-submenu-inline {
+  transition: border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ant-menu-item,
+.ant-menu-submenu-title {
+  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ant-menu-item:active,
 .ant-menu-submenu-title:active {
@@ -3027,6 +3085,7 @@ samp {
 }
 .ant-menu-submenu .ant-menu-sub {
   cursor: initial;
+  transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ant-menu-item > a {
   display: block;
@@ -3111,7 +3170,10 @@ samp {
   -webkit-transform: scaleY(0.0001);
       -ms-transform: scaleY(0.0001);
           transform: scaleY(0.0001);
-  transition: all .2s;
+  opacity: 0;
+  transition: opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .ant-menu-vertical.ant-menu-sub {
   border-right: 0;
@@ -3131,8 +3193,18 @@ samp {
 .ant-menu-vertical.ant-menu-sub > .ant-menu-item-group:last-child > .ant-menu-item-group-list:last-child > .ant-menu-item:last-child {
   border-radius: 0 0 4px 4px;
 }
+.ant-menu-vertical.ant-menu-sub > .ant-menu-item:only-child {
+  border-radius: 4px;
+}
+.ant-menu-inline {
+  width: 100%;
+}
 .ant-menu-inline .ant-menu-selected:after,
 .ant-menu-inline .ant-menu-item-selected:after {
+  transition: opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 1;
   -webkit-transform: scaleY(1);
       -ms-transform: scaleY(1);
           transform: scaleY(1);
@@ -3168,6 +3240,12 @@ samp {
 .ant-menu-submenu-title .anticon {
   min-width: 14px;
   margin-right: 8px;
+  transition: font-size 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), margin 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ant-menu-item .anticon + span,
+.ant-menu-submenu-title .anticon + span {
+  transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 1;
 }
 .ant-menu > .ant-menu-item-divider {
   height: 1px;
@@ -3184,6 +3262,11 @@ samp {
   background-color: #fff;
   border-radius: 4px;
 }
+.ant-menu-submenu > .ant-menu-submenu-title:after {
+  transition: -webkit-transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
 .ant-menu-submenu-vertical > .ant-menu-submenu-title:after {
   font-family: "anticon" !important;
   font-style: normal;
@@ -3192,9 +3275,6 @@ samp {
   text-transform: none;
   text-rendering: auto;
   position: absolute;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
   content: "\E61D";
   right: 16px;
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
@@ -3210,9 +3290,6 @@ samp {
   text-transform: none;
   text-rendering: auto;
   position: absolute;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
   content: "\E61D";
   right: 16px;
   top: 0;
@@ -3295,6 +3372,51 @@ samp {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.ant-menu-inline-collapsed {
+  width: 64px;
+}
+.ant-menu-inline-collapsed > .ant-menu-item,
+.ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item,
+.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+  left: 0;
+  text-overflow: clip;
+  padding: 0 24px !important;
+}
+.ant-menu-inline-collapsed > .ant-menu-item:after,
+.ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item:after,
+.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title:after {
+  display: none;
+}
+.ant-menu-inline-collapsed > .ant-menu-item .anticon,
+.ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item .anticon,
+.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title .anticon {
+  font-size: 16px;
+  line-height: 42px;
+  margin: 0;
+}
+.ant-menu-inline-collapsed > .ant-menu-item .anticon + span,
+.ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item .anticon + span,
+.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title .anticon + span {
+  max-width: 0;
+  display: inline-block;
+  opacity: 0;
+}
+.ant-menu-inline-collapsed-tooltip {
+  pointer-events: none;
+}
+.ant-menu-inline-collapsed-tooltip .anticon {
+  display: none;
+}
+.ant-menu-inline-collapsed-tooltip a {
+  color: rgba(255, 255, 255, 0.91);
+}
+.ant-menu-inline-collapsed .ant-menu-item-group-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-left: 4px;
+  padding-right: 4px;
+}
 .ant-menu-item-group-list .ant-menu-item,
 .ant-menu-item-group-list .ant-menu-submenu-title {
   padding: 0 16px 0 28px;
@@ -3343,6 +3465,11 @@ samp {
   color: rgba(0, 0, 0, 0.25) !important;
   pointer-events: none;
 }
+.ant-menu-item-disabled > .ant-menu-submenu-title,
+.ant-menu-submenu-disabled > .ant-menu-submenu-title {
+  color: rgba(0, 0, 0, 0.25) !important;
+  cursor: not-allowed;
+}
 .ant-menu-dark,
 .ant-menu-dark .ant-menu-sub {
   color: rgba(255, 255, 255, 0.67);
@@ -3358,7 +3485,6 @@ samp {
 .ant-menu-dark.ant-menu-horizontal > .ant-menu-submenu {
   border-color: #404040;
   border-bottom: 0;
-  top: 0;
 }
 .ant-menu-dark .ant-menu-item,
 .ant-menu-dark .ant-menu-item-group-title,
@@ -3384,7 +3510,6 @@ samp {
 .ant-menu-dark .ant-menu-submenu-active,
 .ant-menu-dark:not(.ant-menu-inline) .ant-menu-submenu-open,
 .ant-menu-dark .ant-menu-submenu-selected,
-.ant-menu-dark .ant-menu-submenu:hover,
 .ant-menu-dark .ant-menu-submenu-title:hover {
   background-color: transparent;
   color: #fff;
@@ -3394,7 +3519,6 @@ samp {
 .ant-menu-dark .ant-menu-submenu-active > a,
 .ant-menu-dark:not(.ant-menu-inline) .ant-menu-submenu-open > a,
 .ant-menu-dark .ant-menu-submenu-selected > a,
-.ant-menu-dark .ant-menu-submenu:hover > a,
 .ant-menu-dark .ant-menu-submenu-title:hover > a {
   color: #fff;
 }
@@ -3410,9 +3534,6 @@ samp {
   color: #fff;
 }
 .ant-menu.ant-menu-dark .ant-menu-item-selected {
-  background-color: transparent;
-}
-.ant-menu-dark.ant-menu-inline .ant-menu-item-selected {
   background-color: #108ee9;
 }
 .ant-menu-dark .ant-menu-item-disabled,
@@ -3422,11 +3543,133 @@ samp {
   opacity: 0.8;
   color: rgba(255, 255, 255, 0.35) !important;
 }
-@font-face {
-  font-family: "Helvetica Neue For Number";
-  src: local("Helvetica Neue");
-  unicode-range: U+30-39;
+.ant-menu-dark .ant-menu-item-disabled > .ant-menu-submenu-title,
+.ant-menu-dark .ant-menu-submenu-disabled > .ant-menu-submenu-title {
+  color: rgba(255, 255, 255, 0.35) !important;
 }
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable declaration-bang-space-before */
+/* stylelint-disable declaration-bang-space-before */
+.ant-tooltip {
+  position: absolute;
+  z-index: 1060;
+  display: block;
+  visibility: visible;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.ant-tooltip-hidden {
+  display: none;
+}
+.ant-tooltip-placement-top,
+.ant-tooltip-placement-topLeft,
+.ant-tooltip-placement-topRight {
+  padding-bottom: 8px;
+}
+.ant-tooltip-placement-right,
+.ant-tooltip-placement-rightTop,
+.ant-tooltip-placement-rightBottom {
+  padding-left: 8px;
+}
+.ant-tooltip-placement-bottom,
+.ant-tooltip-placement-bottomLeft,
+.ant-tooltip-placement-bottomRight {
+  padding-top: 8px;
+}
+.ant-tooltip-placement-left,
+.ant-tooltip-placement-leftTop,
+.ant-tooltip-placement-leftBottom {
+  padding-right: 8px;
+}
+.ant-tooltip-inner {
+  max-width: 250px;
+  padding: 8px 10px;
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  min-height: 34px;
+}
+.ant-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.ant-tooltip-placement-top .ant-tooltip-arrow,
+.ant-tooltip-placement-topLeft .ant-tooltip-arrow,
+.ant-tooltip-placement-topRight .ant-tooltip-arrow {
+  bottom: 3px;
+  border-width: 5px 5px 0;
+  border-top-color: rgba(0, 0, 0, 0.75);
+}
+.ant-tooltip-placement-top .ant-tooltip-arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+.ant-tooltip-placement-topLeft .ant-tooltip-arrow {
+  left: 16px;
+}
+.ant-tooltip-placement-topRight .ant-tooltip-arrow {
+  right: 16px;
+}
+.ant-tooltip-placement-right .ant-tooltip-arrow,
+.ant-tooltip-placement-rightTop .ant-tooltip-arrow,
+.ant-tooltip-placement-rightBottom .ant-tooltip-arrow {
+  left: 3px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: rgba(0, 0, 0, 0.75);
+}
+.ant-tooltip-placement-right .ant-tooltip-arrow {
+  top: 50%;
+  margin-top: -5px;
+}
+.ant-tooltip-placement-rightTop .ant-tooltip-arrow {
+  top: 8px;
+}
+.ant-tooltip-placement-rightBottom .ant-tooltip-arrow {
+  bottom: 8px;
+}
+.ant-tooltip-placement-left .ant-tooltip-arrow,
+.ant-tooltip-placement-leftTop .ant-tooltip-arrow,
+.ant-tooltip-placement-leftBottom .ant-tooltip-arrow {
+  right: 3px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: rgba(0, 0, 0, 0.75);
+}
+.ant-tooltip-placement-left .ant-tooltip-arrow {
+  top: 50%;
+  margin-top: -5px;
+}
+.ant-tooltip-placement-leftTop .ant-tooltip-arrow {
+  top: 8px;
+}
+.ant-tooltip-placement-leftBottom .ant-tooltip-arrow {
+  bottom: 8px;
+}
+.ant-tooltip-placement-bottom .ant-tooltip-arrow,
+.ant-tooltip-placement-bottomLeft .ant-tooltip-arrow,
+.ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
+  top: 3px;
+  border-width: 0 5px 5px;
+  border-bottom-color: rgba(0, 0, 0, 0.75);
+}
+.ant-tooltip-placement-bottom .ant-tooltip-arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+.ant-tooltip-placement-bottomLeft .ant-tooltip-arrow {
+  left: 16px;
+}
+.ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
+  right: 16px;
+}
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable declaration-bang-space-before */
+/* stylelint-disable declaration-bang-space-before */
 .ant-layout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3438,7 +3681,6 @@ samp {
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
-  overflow: auto;
   background: #ececec;
 }
 .ant-layout.ant-layout-has-sider {
@@ -3446,6 +3688,10 @@ samp {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+.ant-layout.ant-layout-has-sider > .ant-layout,
+.ant-layout.ant-layout-has-sider > .ant-layout-content {
+  overflow-x: hidden;
 }
 .ant-layout-header,
 .ant-layout-footer {
@@ -3468,14 +3714,16 @@ samp {
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
-  overflow: auto;
 }
 .ant-layout-sider {
-  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all .2s;
   position: relative;
   background: #404040;
   /* fix firefox can't set width smaller than content on flex item */
   min-width: 0;
+}
+.ant-layout-sider-children {
+  height: 100%;
 }
 .ant-layout-sider-has-trigger {
   padding-bottom: 48px;
@@ -3486,15 +3734,16 @@ samp {
           order: 1;
 }
 .ant-layout-sider-trigger {
-  position: absolute;
+  position: fixed;
   text-align: center;
-  width: 100%;
   bottom: 0;
   cursor: pointer;
   height: 48px;
   line-height: 48px;
-  background: rgba(64, 64, 64, 0.88);
   color: #fff;
+  background: #404040;
+  z-index: 1;
+  transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ant-layout-sider-zero-width > * {
   overflow: hidden;

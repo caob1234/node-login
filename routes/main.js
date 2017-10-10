@@ -3,6 +3,7 @@
  */
 
 const router = require('koa-router')();
+const userInfoController = require('./../controller/user-info');
 
 const routers = router
     .get('/', async (ctx) => {
@@ -11,5 +12,6 @@ const routers = router
             title
         })
     })
+    .post('/get-user',userInfoController.getUser)
 
 module.exports = routers;
