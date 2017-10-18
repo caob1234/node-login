@@ -22,12 +22,13 @@ class App extends React.Component {
             headers: {
                 'Content-Type': 'application/json; charset=utf-8'
             },
-            body: JSON.stringify({username:'caobin'})
+            body: JSON.stringify({username:'test2'})
         }).then(res => {
             res.json().then(res => {
                 console.log(res.password);
+                console.log('后台传过来的人员头像----------' + res.head_portrait);
                 self.setState({
-                    imgUrl:'https://avatars0.githubusercontent.com/u/6292358?v=4'
+                    imgUrl: res.head_portrait
                 });
             })
         })

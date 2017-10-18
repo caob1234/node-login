@@ -10,7 +10,7 @@ module.exports = {
             success: false,
             message: '注册失败'
         };
-        const { username, email, password, head } = ctx.request.body;
+        const { username, email, password, head_portrait } = ctx.request.body;
 
         if (!username && !password) {
             result.message = '请填写用户名和密码';
@@ -23,7 +23,7 @@ module.exports = {
                     username: username,
                     password: password,
                     email: email,
-                    head_portrait:head
+                    head_portrait:head_portrait
                 });
 
                 const doc = await newUser.save();

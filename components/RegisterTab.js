@@ -147,6 +147,20 @@ class RegisterTab extends React.Component {
                             <Input />
                         )}
                     </FormItem>
+                    <FormItem
+                        {...formItemLayout}
+                        label="head-portrait"
+                        hasFeedback
+                    >
+                        {getFieldDecorator('head_portrait', {
+                            rules: [ {
+                                required: true, message: 'Please input your head_portrait!',
+                            }],
+                        })(
+                            <Input />
+                        )}
+                    </FormItem>
+
                     <FormItem {...tailFormItemLayout} style={{ marginBottom: 8 }}>
                         {getFieldDecorator('agreement', {
                             valuePropName: 'checked',
