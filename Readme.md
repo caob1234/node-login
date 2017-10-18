@@ -266,3 +266,37 @@ export default Form.create()(LoginTab);
 这个例子主要参考了：
 [项目1](https://github.com/Nicksapp/nAuth-restful-api)
 [项目2](https://github.com/ChenShenhai/koa2-note/blob/master/demo/project/)
+
+fork之后的记录
+
+react中获取数据的流程：
+
+1.在constructor中初始化state，并且定义数据结构。
+
+    constructor(props) {
+        super(props);
+        this.state = {imgUrl:''};
+    }
+    
+2.在componentDidMount中请求后台数据，并且添加到state中。
+
+    componentDidMount(){
+        var self =this;
+        fetch('/main/get-user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({username:'caobin'})
+        }).then(res => {
+            res.json().then(res => {
+                console.log(res.password);
+                self.setState({
+                    imgUrl:'https://avatars0.githubusercontent.com/u/6292358?v=4'
+                });
+            })
+        })
+    }
+    
+    
+3.最后在render中，通过state获取变量值渲染到界面。

@@ -9,7 +9,7 @@ const { Header, Content, Footer } = Layout
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {imgUrl:'https://avatars0.githubusercontent.com/u/6292358?v=4'};
+        this.state = {imgUrl:''};
     }
     handleClick = (item) => {
         const path = item.key;
