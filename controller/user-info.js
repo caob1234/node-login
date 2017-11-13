@@ -89,7 +89,7 @@ module.exports = {
             if (!user) {
                 ctx.body = result;
             } else {
-                ctx.body = {success: true, password: user.password}
+                ctx.body = {success: true, password: user.password,head_portrait:user.head_portrait}
             }
         })
     }
