@@ -21,9 +21,9 @@ class LoginTab extends React.Component {
                 body: JSON.stringify(values)
             }).then(res => {
                 res.json().then(res => {
-                    Message.info(res.message);
+                    console.log("后台传过来的头像--------"+res.head_portrait)
                     if (res.success) {
-                        location.href = '/main';
+                        location.href = '/home';
                     }
                 })
             })
